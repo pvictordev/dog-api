@@ -1,0 +1,29 @@
+.main {
+   
+    h2 {
+        text-align: center;
+        margin-bottom:30px;
+    }
+    ul {
+        border: 3px solid rgb(188, 190, 198);
+        border-radius: 15px;
+        list-style: none;
+        padding: 20px;
+        li {
+            cursor: pointer;
+            margin-top: 10px;
+            padding: 10px;
+            border: 3px solid transparent;
+            border-radius: 15px;
+            a {
+                text-decoration: none;
+                color: gray;
+            }
+        }
+        li:hover {
+            border: 3px solid rgb(188, 190, 198);
+            border-radius: 15px;
+        }
+    }
+    
+}
