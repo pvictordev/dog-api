@@ -1,9 +1,31 @@
 <div class="main">
+
+<a style="font-size: 30px; cursor: pointer;" onclick="history.back()">←</a>
+
   <h2>Particular breed</h2>
 
-  <ul>
-    <li>
-      <a href="/sub-breed">Sub breed 1</a>
-    </li>
-  </ul>
+    @if(breedName) {
+        <h2>{{ breedName | titlecase }}</h2>
+        
+        @if(breedImages.length > 0) {
+            <img [src]="breedImages[0]" alt="{{ breedName }}">
+        }
+    }
+
+    <div class="sub-breeds">
+        <h2>Sub Breeds</h2>
+        @if(subBreeds.length > 0) {
+            <ul class="sub-breed">
+                @for(subBreed of subBreeds; track $index) {
+                    <li>
+                        <a [routerLink]="['/breed', breedName, subBreed]">{{ subBreed | titlecase }}</a>
+                    </li>
+                }
+            </ul>
+        }
+        @else {
+            <p>there are no sub breeds for this breed</p>
+        }
+    </div>
+    
 </div>

@@ -1,1 +1,16 @@
-<p>sub-breed works!</p>
+<div class="main">
+
+    <a style="font-size: 30px; cursor: pointer;" onclick="history.back()">←</a>
+
+    <h2>Particular Sub Breed</h2>
+  
+      @if(subBreedName) {
+          <h2>{{ subBreedName | titlecase }}</h2>
+          
+          @if(subBreedImages.length > 0) {
+              <img [src]="subBreedImages[0]" alt="{{ subBreedName }}">
+          }
+      }
+      
+</div>
+  

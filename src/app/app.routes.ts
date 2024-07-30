@@ -5,6 +5,6 @@ import { SubBreedComponent } from './pages/sub-breed/sub-breed.component';
 
 export const routes: Routes = [
   { path: '', component: DogsComponent },
-  { path: 'breed', component: BreedComponent },
-  { path: 'sub-breed', component: SubBreedComponent },
+  { path: 'breed/:breedName', component: BreedComponent },
+  { path: 'breed/:breedName/:subBreedName', component: SubBreedComponent },
 ];
