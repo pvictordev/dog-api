@@ -2,10 +2,17 @@
   <h2>Dogs breeds list</h2>
   
   @if(breeds.length > 0) {
+    
     <ul>
-      @for(breed of breeds; track $index) {
+      <div class="search">
+        <input type="text" placeholder="Search" [(ngModel)]="searchItem" (input)="onSearch()">
+        <span>🔎</span>
+      </div>
+      
+      @for(breed of filteredBreeds; track $index) {
         <li><a [routerLink]="['/breed', breed]">{{breed | titlecase}}</a></li>
       }
+    
     </ul>
   }
 </div>

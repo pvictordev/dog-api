@@ -3,6 +3,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    img {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+    }
 }
 .sub-breeds {
     margin-top: 100px;
@@ -22,6 +28,7 @@
             border-radius: 15px;
             a {
                 color: gray;
+                display: block;
             }
         }
         li:hover {

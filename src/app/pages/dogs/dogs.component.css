@@ -8,6 +8,29 @@
         border: 3px solid rgb(188, 190, 198);
         border-radius: 15px;
         padding: 20px;
+        
+        .search {
+            display: flex;
+            border: 3px solid rgb(188, 190, 198);
+            border-radius: 15px;
+            padding: 10px;
+            position: relative;
+
+            input {
+                padding: 10px;
+                margin-left: 25px;
+                outline: none;
+                border: none;
+                font-size: 20px;
+            }
+
+            span {
+                position: absolute;
+                font-size: 20px;
+                top: 15px;
+            }
+        }
+
         li {
             cursor: pointer;
             margin-top: 10px;
@@ -16,6 +39,7 @@
             border-radius: 15px;
             a {
                 color: gray;
+                display: block;
             }
         }
         li:hover {
