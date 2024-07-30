@@ -1,23 +1,23 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-sub-breed',
   standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './sub-breed.component.html',
   styleUrl: './sub-breed.component.css'
 })
 export class SubBreedComponent {
   breedName: string | null = null;
   subBreedName: string | null = null;
-  subBreedImages: string[] = [];
+  subBreedImage: string[] = [];
 
   constructor(
     private route: ActivatedRoute,
-    private http: HttpClient
+    private apiService: ApiService
   ) { }
 
   ngOnInit() {
@@ -25,22 +25,20 @@ export class SubBreedComponent {
       this.breedName = params.get('breedName');
       this.subBreedName = params.get('subBreedName');
       if (this.breedName && this.subBreedName) {
-        this.fetchBreedImages();
+        this.fetchSubBreedImage();
       }
     });
   }
 
-  fetchBreedImages() {
-    if (this.subBreedName) {
-      this.http.get<any>(`https://dog.ceo/api/breed/${this.breedName + "/" + this.subBreedName}/images/random/1`)
-        .subscribe(
-          response => {
-            this.subBreedImages = response.message;
-          },
-          error => {
-            console.error('Error fetching breed images:', error);
-          }
-        );
-    }
+  fetchSubBreedImage() {
+
+    this.apiService.getSubBreedImage(this.breedName, this.subBreedName).subscribe({
+      next: (data) => {
+        this.subBreedImage = data.message[1];
+      },
+      error: (error) => {
+        console.error("Error fetching sub Breed:", error);
+      },
+    });
   }
 }

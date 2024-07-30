@@ -1,16 +1,16 @@
 <div class="main">
 
-    <a style="font-size: 30px; cursor: pointer;" onclick="history.back()">←</a>
-
-    <h2>Particular Sub Breed</h2>
-  
-      @if(subBreedName) {
-          <h2>{{ subBreedName | titlecase }}</h2>
-          
-          @if(subBreedImages.length > 0) {
-              <img [src]="subBreedImages[0]" alt="{{ subBreedName }}">
-          }
-      }
+    <a href="breed/{{breedName}}" class="back-link">←</a>
+    
+    <div class="sub-breed">
+        @if(subBreedName) {
+            <h2>{{ subBreedName | titlecase }}</h2>
+            
+            @if(subBreedImage.length > 0) {
+                <img [src]="subBreedImage" alt="{{ subBreedName }}">
+            }
+        }
+    </div>
       
 </div>
   

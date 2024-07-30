@@ -21,7 +21,7 @@ export class ApiService {
     return this.httpClient.get<any>("https://dog.ceo/api/breed/" + breedName + "/list");
   }
 
-  getSubBreedImage() {
-
+  getSubBreedImage(breedName: string | null, subBreedName: string | null) {
+    return this.httpClient.get<any>("https://dog.ceo/api/breed/" + breedName + "/" + subBreedName + "/images");
   }
 }
