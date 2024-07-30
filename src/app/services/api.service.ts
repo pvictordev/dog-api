@@ -12,4 +12,16 @@ export class ApiService {
   getAllBreeds(): Observable<any> {
     return this.httpClient.get<any>('https://dog.ceo/api/breeds/list/all');
   }
+
+  getBreedImage(breedName: string | null): Observable<any> {
+    return this.httpClient.get<any>("https://dog.ceo/api/breed/" + breedName + "/images");
+  }
+
+  getSubBreeds(breedName: string | null) {
+    return this.httpClient.get<any>("https://dog.ceo/api/breed/" + breedName + "/list");
+  }
+
+  getSubBreedImage() {
+
+  }
 }

@@ -1,0 +1,36 @@
+.main {
+    
+}
+
+.breed {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sub-breeds {
+    margin-top: 100px;
+    h2 {
+        text-align: center;
+    }
+    ul {
+        border: 3px solid rgb(188, 190, 198);
+        border-radius: 15px;
+        padding: 20px;
+
+        li {
+            cursor: pointer;
+            margin-top: 10px;
+            padding: 10px;
+            border: 3px solid transparent;
+            border-radius: 15px;
+            a {
+                color: gray;
+            }
+        }
+        li:hover {
+            border: 3px solid rgb(188, 190, 198);
+            border-radius: 15px;
+        }
+    }
+}

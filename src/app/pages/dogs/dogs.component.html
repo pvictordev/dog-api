@@ -4,7 +4,7 @@
   @if(breeds.length > 0) {
     <ul>
       @for(breed of breeds; track $index) {
-        <li><a [routerLink]="['/breed', breed]">{{breed}}</a></li>
+        <li><a [routerLink]="['/breed', breed]">{{breed | titlecase}}</a></li>
       }
     </ul>
   }
