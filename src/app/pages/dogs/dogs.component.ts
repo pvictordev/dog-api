@@ -4,6 +4,7 @@ import { ApiService } from '../../services/api.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
+
 @Component({
   selector: 'app-dogs',
   standalone: true,
@@ -22,7 +23,7 @@ export class DogsComponent implements OnInit {
   ngOnInit(): void {
     this.fetchAllBreeds();
     // this.fetchPartialBreeds();
-    this.filteredBreeds = this.breeds
+    this.filteredBreeds = this.breeds;
   }
 
   fetchAllBreeds(): void {
@@ -53,6 +54,10 @@ export class DogsComponent implements OnInit {
     this.filteredBreeds = this.breeds.filter(breed =>
       breed.toLowerCase().startsWith(searchItemLower)
     );
+  }
+
+  trackByFn(index: number, item: string): string {
+    return item;
   }
 
 }

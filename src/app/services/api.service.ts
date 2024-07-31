@@ -13,14 +13,14 @@ export class ApiService {
     return this.httpClient.get<any>('https://dog.ceo/api/breeds/list/all');
   }
 
-  // getPartialBreeds(limit: number = 10): Observable<string[]> {
-  //   return this.httpClient.get<any>('https://dog.ceo/api/breeds/list/all').pipe(
-  //     map(response => {
-  //       const allBreeds = Object.keys(response.message);
-  //       return allBreeds.slice(0, limit);
-  //     })
-  //   );
-  // }
+  getPartialBreeds(limit: number = 10): Observable<string[]> {
+    return this.httpClient.get<any>('https://dog.ceo/api/breeds/list/all?limit=5').pipe(
+      map(response => {
+        const allBreeds = Object.keys(response.message);
+        return allBreeds.slice(0, limit);
+      })
+    );
+  }
 
   getBreedImage(breedName: string | null): Observable<any> {
     return this.httpClient.get<any>("https://dog.ceo/api/breed/" + breedName + "/images");
