@@ -1,53 +1,65 @@
-.main {
-   
+  .container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .main {
+    width: 100%;
+    padding: 20px;
+    max-width: 1200px;
+
     h2 {
         text-align: center;
-        margin-bottom:30px;
     }
-    ul {
-        border: 3px solid rgb(188, 190, 198);
-        border-radius: 15px;
-        padding: 20px;
-        
-        .search {
-            display: flex;
-            border: 3px solid rgb(188, 190, 198);
-            border-radius: 15px;
-            padding: 5px;
-            position: relative;
+      
+  }
 
-            input {
-                padding: 10px;
-                margin-left: 30px;
-                outline: none;
-                border: none;
-                font-size: 18px;
-                width: 100%;
-            }
+  .breeds-container {
+    border: 3px solid rgb(188, 190, 198);
+    border-radius: 15px;
+    padding: 10px;
+  }
 
-            span {
-                position: absolute;
-                font-size: 20px;
-                top: 10px;
-                left: 12px;
-            }
-        }
-
-        li {
-            cursor: pointer;
-            margin-top: 10px;
-            padding: 10px;
-            border: 3px solid transparent;
-            border-radius: 15px;
-            a {
-                color: gray;
-                display: block;
-            }
-        }
-        li:hover {
-            border: 3px solid rgb(188, 190, 198);
-            border-radius: 15px;
-        }
+  .breeds {
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 10px;
+    border: 3px solid transparent;
+    border-radius: 15px;
+    a {
+        color: gray;
+        display: block;
     }
-    
-}
+
+  }
+  .breeds:hover {
+    border: 3px solid rgb(188, 190, 198);
+    border-radius: 15px;
+  }
+
+  .search {
+    display: flex;
+    border: 3px solid rgb(188, 190, 198);
+    border-radius: 15px;
+    padding: 5px;
+    position: relative;
+    margin-bottom: 30px;
+
+    input {
+        padding: 10px;
+        margin-left: 30px;
+        outline: none;
+        border: none;
+        font-size: 18px;
+        width: 100%;
+    }
+
+    span {
+        position: absolute;
+        font-size: 20px;
+        top: 10px;
+        left: 12px;
+    }
+  }
