@@ -37,18 +37,6 @@ export class DogsComponent implements OnInit {
     });
   }
 
-  // fetchPartialBreeds(): void {
-  //   this.apiService.getPartialBreeds(10).subscribe({
-  //     next: (data) => {
-  //       console.log(data)
-  //       this.breeds = data;
-  //     },
-  //     error: (error) => {
-  //       console.error("Error fetching dogs:", error);
-  //     },
-  //   });
-  // }
-
   onSearch(): void {
     const searchItemLower = this.searchItem.toLowerCase().trim();
     this.filteredBreeds = this.breeds.filter(breed =>
