@@ -1,16 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ApiService } from '../../services/api.service';
 
+import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
+
 @Component({
   selector: 'app-breed',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, CardModule, ButtonModule],
   templateUrl: './breed.component.html',
   styleUrl: './breed.component.css'
 })
+
+
 export class BreedComponent {
 
   breedName: string | null = null;

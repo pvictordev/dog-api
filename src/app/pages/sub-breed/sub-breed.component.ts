@@ -3,10 +3,12 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ApiService } from '../../services/api.service';
 
+import { CardModule } from 'primeng/card';
+
 @Component({
   selector: 'app-sub-breed',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, CardModule],
   templateUrl: './sub-breed.component.html',
   styleUrl: './sub-breed.component.css'
 })

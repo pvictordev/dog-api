@@ -4,11 +4,11 @@
     
     @if(breeds.length > 0) {
 
-      <div class="search">
-        <input type="text" placeholder="Search" [(ngModel)]="searchItem" (input)="onSearch()">
-        <span>🔎</span>
-      </div>
-      
+      <span class="p-input-icon-left search">
+        <i class="pi pi-search"></i>
+        <input type="text" pInputText [(ngModel)]="searchItem" (input)="onSearch()" placeholder="Search">         
+      </span>
+        
       <div class="breeds-container">
         <p-scroller 
           [items]="filteredBreeds" 

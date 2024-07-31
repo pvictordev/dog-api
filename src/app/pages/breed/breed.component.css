@@ -3,10 +3,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     img {
-        width: 300px;
-        height: 300px;
+        width: 500px;
+        height: 500px;
         object-fit: cover;
     }
 }
@@ -16,15 +15,15 @@
         text-align: center;
     }
     ul {
-        border: 3px solid rgb(188, 190, 198);
-        border-radius: 15px;
-        padding: 20px;
+       border: 1px solid rgb(188, 190, 198);
+       border-radius: 8px;
+       padding: 10px;
 
         li {
             cursor: pointer;
             margin-top: 10px;
             padding: 10px;
-            border: 3px solid transparent;
+            border: 1px solid transparent;
             border-radius: 15px;
             a {
                 color: gray;
@@ -32,7 +31,7 @@
             }
         }
         li:hover {
-            border: 3px solid rgb(188, 190, 198);
+            border: 1px solid rgb(188, 190, 198);
             border-radius: 15px;
         }
     }
