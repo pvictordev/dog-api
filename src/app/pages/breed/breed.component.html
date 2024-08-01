@@ -9,7 +9,7 @@
     @if(breedName) {
         <p-card header="{{breedName | titlecase}}" class="breed" >
             @if(breedImage.length > 0) {
-                <img [src]="breedImage" alt="{{ breedName }}" />
+                <img ngSrc="{{breedImage}}" width="500" height="500" alt="{{ breedName }}" />  
             }
         </p-card>
     }   

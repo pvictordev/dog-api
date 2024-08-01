@@ -18,6 +18,7 @@
 
   .breeds-container {
     border: 1px solid rgb(188, 190, 198);
+    background-color: white; 
     border-radius: 8px;
     padding: 10px;
   }
@@ -47,3 +48,8 @@
       width: 100%;
     }
   } 
+
+  /* custom styles */
+  ::ng-deep .p-scroller-loader {
+    background-color: white; 
+  }

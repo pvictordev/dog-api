@@ -8,8 +8,9 @@
 
     <p-card header="{{subBreedName | titlecase}}" class="sub-breed" >
         @if(subBreedImage.length > 0) {
-            <img [src]="subBreedImage" alt="{{ subBreedName }}" />
+            <img ngSrc="{{subBreedImage}}" width="500" height="500" alt="{{ subBreedName }}" />
         }
+       
     </p-card>
       
 </div>

@@ -18,6 +18,7 @@ import { InputTextModule } from 'primeng/inputtext';
   providers: [ApiService]
 })
 export class DogsComponent implements OnInit {
+
   constructor(private apiService: ApiService) { }
 
   breeds: string[] = [];
