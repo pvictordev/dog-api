@@ -1,16 +1,17 @@
 <div class="main">
 
-    <a href="breed/{{breedName}}" class="back-link">←</a>
-    
-    <div class="sub-breed">
-        @if(subBreedName) {
-            <h2>{{ subBreedName | titlecase }}</h2>
-            
-            @if(subBreedImage.length > 0) {
-                <img [src]="subBreedImage" alt="{{ subBreedName }}">
-            }
+    <a class="back-link" href="/breed/{{breedName}}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M5 12L11 6M5 12L11 18" stroke="#a9a9a9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+
+    <p-card header="{{subBreedName | titlecase}}" class="sub-breed" >
+        @if(subBreedImage.length > 0) {
+            <img ngSrc="{{subBreedImage}}" width="500" height="500" alt="{{ subBreedName }}" />
         }
-    </div>
+       
+    </p-card>
       
 </div>
   

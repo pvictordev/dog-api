@@ -1,18 +1,35 @@
-<div class="main">
-  <h2>Dog Breeds</h2>
-  
-  @if(breeds.length > 0) {
+<div class="container">
+  <div class="main">
+    <h2>Dog Breeds</h2>
     
-    <ul>
-      <div class="search">
-        <input type="text" placeholder="Search" [(ngModel)]="searchItem" (input)="onSearch()">
-        <span>🔎</span>
+    @if(breeds.length > 0) {
+
+      <span class="p-input-icon-left search">
+        <i class="pi pi-search"></i>
+        <input type="text" pInputText [(ngModel)]="searchItem" (input)="onSearch()" placeholder="Search">         
+      </span>
+        
+      <div class="breeds-container">
+        <p-scroller 
+          [items]="filteredBreeds" 
+          [itemSize]="50" 
+          [showLoader]="true" 
+          [delay]="250" 
+          [loading]="lazyLoading" 
+          [lazy]="true" 
+          (onLazyLoad)="onLazyLoad($event)"
+          [style]="{'height': '400px'}"
+          >
+            <ng-template pTemplate="item" let-breed let-options="options">
+              <div 
+                class="breeds" 
+                [ngClass]="{ 'surface-ground': options.odd }" 
+              >
+                  <a [routerLink]="['/breed', breed]">{{breed | titlecase}}</a>
+              </div>
+            </ng-template>
+        </p-scroller>
       </div>
-      
-      @for(breed of filteredBreeds; track $index) {
-        <li><a [routerLink]="['/breed', breed]">{{breed | titlecase}}</a></li>
-      }
-    
-    </ul>
-  }
+    }
+  </div>
 </div>
